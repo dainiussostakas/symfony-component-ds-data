@@ -42,16 +42,16 @@ jobs:
         run: |
           docker load --input /tmp/symfony-component-generator-image.tar
           docker image ls -a
-          docker run -d symfony-component-generator-image
+          docker run -d symfony-component-generator-image --name ymfony-component-generator
           docker container ls -a
       - name: Composer dependencies install
-        run: docker exec -it symfony-component-generator-image composer install
+        run: docker exec -it symfony-component-generator composer install
       - name: PHPStan
-        run: docker exec -it symfony-component-generator-image ./vendor/bin/phpstan analyse src
+        run: docker exec -it symfony-component-generator ./vendor/bin/phpstan analyse src
       - name: PHPCodeSniffer
-        run: docker exec -it symfony-component-generator-image ./vendor/bin/phpcs --standard=PSR12 src
+        run: docker exec -it symfony-component-generator ./vendor/bin/phpcs --standard=PSR12 src
       - name: PHPUnit tests
-        run: docker exec -it symfony-component-generator-image ./vendor/bin/phpunit
+        run: docker exec -it symfony-component-generator ./vendor/bin/phpunit
 
 #    steps:
 #    - uses: actions/checkout@v4
