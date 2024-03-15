@@ -48,23 +48,3 @@ jobs:
         run: docker exec symfony-component-generator-php composer install
       - name: Executing tests
         run: docker exec symfony-component-generator-php sh docker/php/execute-tests.sh
-#      - name: PHPStan
-#        run: docker exec symfony-component-generator-php ./vendor/bin/phpstan analyse src
-#      - name: PHPCodeSniffer
-#        run: docker exec symfony-component-generator-php ./vendor/bin/phpcs --standard=PSR12 src
-#      - name: PHPUnit tests
-#        run: docker exec symfony-component-generator-php ./vendor/bin/phpunit
-
-#    steps:
-#    - uses: actions/checkout@v4
-#    - name: Build the Docker image
-#      run: docker build . --file docker/php/Dockerfile --target=production --tag symfony-component-generator:$(date +%s)
-#    - name: Composer dependencies install
-#      run: composer install
-#    - name: PHPStan
-#      run: ./vendor/bin/phpstan analyse src
-#    - name: PHPCodeSniffer
-#      run: ./vendor/bin/phpcs --standard=PSR12 src
-#    - name: PHPUnit tests
-#      run: ./vendor/bin/phpunit
-
