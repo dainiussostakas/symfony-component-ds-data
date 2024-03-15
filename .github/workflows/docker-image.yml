@@ -42,7 +42,7 @@ jobs:
         run: |
           docker load --input /tmp/symfony-component-generator-image.tar
           docker image ls -a
-          docker run -d symfony-component-generator-image --name ymfony-component-generator
+          docker run -d symfony-component-generator-image --name symfony-component-generator
           docker container ls -a
       - name: Composer dependencies install
         run: docker exec -it symfony-component-generator composer install
