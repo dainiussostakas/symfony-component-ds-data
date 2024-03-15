@@ -47,4 +47,4 @@ jobs:
       - name: Composer dependencies install
         run: docker exec symfony-component-generator-php composer install
       - name: Executing tests
-        run: docker exec symfony-component-generator-php sh docker/php/execute-tests.sh
+        run: execute-tests.sh
