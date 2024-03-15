@@ -42,6 +42,7 @@ jobs:
         run: |
           docker load --input /tmp/symfony-component-generator-image.tar
           docker image ls -a
+          docker container ls -a
       - name: Checkout
         uses: actions/checkout@v4
       - name: Composer dependencies install
