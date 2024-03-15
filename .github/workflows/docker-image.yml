@@ -29,6 +29,28 @@ jobs:
           name: symfony-component-generator-image
           path: /tmp/symfony-component-generator-image.tar
 
+  use:
+    runs-on: ubuntu-latest
+    needs: build
+    steps:
+      - name: Download artifact
+        uses: actions/download-artifact@v3
+        with:
+          name: symfony-component-generator-image
+          path: /tmp
+      - name: Load image
+        run: |
+          docker load --input /tmp/symfony-component-generator-image.tar
+          docker image ls -a
+      - name: Composer dependencies install
+        run: composer install
+      - name: PHPStan
+        run: ./vendor/bin/phpstan analyse src
+      - name: PHPCodeSniffer
+        run: ./vendor/bin/phpcs --standard=PSR12 src
+      - name: PHPUnit tests
+        run: ./vendor/bin/phpunit
+
 #    steps:
 #    - uses: actions/checkout@v4
 #    - name: Build the Docker image
