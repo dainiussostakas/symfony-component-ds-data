@@ -45,13 +45,13 @@ jobs:
           docker run -d --name symfony-component-generator -it symfony-component-generator-image 
           docker container ls -a
       - name: Composer dependencies install
-        run: docker exec -it symfony-component-generator composer install
+        run: docker exec symfony-component-generator composer install
       - name: PHPStan
-        run: docker exec -it symfony-component-generator ./vendor/bin/phpstan analyse src
+        run: docker exec symfony-component-generator ./vendor/bin/phpstan analyse src
       - name: PHPCodeSniffer
-        run: docker exec -it symfony-component-generator ./vendor/bin/phpcs --standard=PSR12 src
+        run: docker exec symfony-component-generator ./vendor/bin/phpcs --standard=PSR12 src
       - name: PHPUnit tests
-        run: docker exec -it symfony-component-generator ./vendor/bin/phpunit
+        run: docker exec symfony-component-generator ./vendor/bin/phpunit
 
 #    steps:
 #    - uses: actions/checkout@v4
