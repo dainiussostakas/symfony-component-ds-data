@@ -42,6 +42,7 @@ jobs:
         run: |
           docker load --input /tmp/symfony-component-generator-image.tar
           docker image ls -a
+          docker run symfony-component-generator-image
           docker container ls -a
       - name: Checkout
         uses: actions/checkout@v4
