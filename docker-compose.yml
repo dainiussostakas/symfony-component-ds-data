@@ -1,0 +1,13 @@
+version: '3'
+
+services:
+
+  php:
+    container_name: symfony-component-generator-php
+    build:
+      context: .
+      dockerfile: docker/php/Dockerfile
+    environment:
+      PHP_IDE_CONFIG: serverName=localhost
+    volumes:
+      - .:/app/
