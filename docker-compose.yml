@@ -1,4 +1,4 @@
-version: '3'
+version: '3.8'
 
 services:
 
@@ -6,6 +6,9 @@ services:
     container_name: symfony-component-generator-php
     build:
       context: .
+      target: production
+      args:
+        DOCKER_BUILDKIT: 1
       dockerfile: docker/php/Dockerfile
     environment:
       PHP_IDE_CONFIG: serverName=localhost
