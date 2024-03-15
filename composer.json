@@ -2,6 +2,7 @@
   "name": "ds/generator",
   "type": "library",
   "description": "Generator",
+  "version": "0.0.1",
   "require": {
     "php": ">=8.2"
   },
