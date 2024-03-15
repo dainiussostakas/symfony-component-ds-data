@@ -1,0 +1,15 @@
+{
+  "name": "ds/generator",
+  "type": "library",
+  "description": "Generator",
+  "require": {
+    "php": ">=8.2"
+  },
+  "autoload": {
+    "psr-4": { "DS\\Component\\Generator\\": "" },
+    "exclude-from-classmap": [
+      "/Tests/"
+    ]
+  },
+  "minimum-stability": "dev"
+}
