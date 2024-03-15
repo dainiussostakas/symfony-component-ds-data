@@ -6,7 +6,7 @@ services:
     container_name: symfony-component-generator-php
     build:
       context: .
-      target: production
+      target: development
       args:
         DOCKER_BUILDKIT: 1
       dockerfile: docker/php/Dockerfile
