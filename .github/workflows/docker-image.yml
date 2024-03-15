@@ -14,6 +14,8 @@ jobs:
     - uses: actions/checkout@v4
     - name: Build the Docker image
       run: docker build . --file docker/php/Dockerfile --target=production --tag symfony-component-generator:$(date +%s)
+    - name: Composer dependencies install
+      run: composer install
     - name: PHPStan
       run: ./vendor/bin/phpstan analyse src
     - name: PHPCodeSniffer
