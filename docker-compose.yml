@@ -12,5 +12,7 @@ services:
       dockerfile: docker/php/Dockerfile
     environment:
       PHP_IDE_CONFIG: serverName=localhost
+    extra_hosts:
+      - "host.docker.internal:host-gateway"
     volumes:
       - .:/app/
