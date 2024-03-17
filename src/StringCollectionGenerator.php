@@ -12,18 +12,18 @@ use Generator;
 
 class StringCollectionGenerator implements IGeneratorCollection
 {
-    protected const DEFAULT_RANGES = [[
+    public const DEFAULT_RANGES = [
         [0x30, 0x0a], // 0-9, total 10(0x0a) characters in range
         [0x41, 0x1a], // A-Z, total 26(0x1a) characters in range
         [0x61, 0x1a], // a-z, total 26(0x1a) characters in range
-    ]];
+    ];
 
     use RangesTrait;
     use LengthTrait;
     use CountTrait;
 
     /**
-     * @param array $ranges Ranges [offset, length] of unicode code points
+     * @param array $ranges Ranges [offset, length] by unicode code table
      */
     public function __construct(array $ranges = self::DEFAULT_RANGES, int $length = 1, int $count = 1)
     {
