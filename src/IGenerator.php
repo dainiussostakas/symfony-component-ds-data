@@ -8,8 +8,6 @@ use Generator;
 
 interface IGenerator
 {
-//    public function getLength(): int;
-
     public function getGenerator(): Generator;
 
     public function getValue();
