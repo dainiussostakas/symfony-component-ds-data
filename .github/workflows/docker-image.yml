@@ -19,15 +19,15 @@ jobs:
         uses: docker/build-push-action@v5
         with:
           context: .
-          tags: symfony-component-generator-php-image:latest
+          tags: ds-data-php-image:latest
           file: docker/php/Dockerfile
           target: production
-          outputs: type=docker,dest=/tmp/symfony-component-generator-php-image.tar
+          outputs: type=docker,dest=/tmp/ds-data-php-image.tar
       - name: Upload artifact
         uses: actions/upload-artifact@v3
         with:
-          name: symfony-component-generator-php-image
-          path: /tmp/symfony-component-generator-php-image.tar
+          name: ds-data-php-image
+          path: /tmp/ds-data-php-image.tar
 
   use:
     runs-on: ubuntu-latest
@@ -36,15 +36,15 @@ jobs:
       - name: Download artifact
         uses: actions/download-artifact@v3
         with:
-          name: symfony-component-generator-php-image
+          name: ds-data-php-image
           path: /tmp
       - name: Load image
         run: |
-          docker load --input /tmp/symfony-component-generator-php-image.tar
+          docker load --input /tmp/ds-data-php-image.tar
           docker image ls -a
-          docker run -d --name symfony-component-generator-php -it symfony-component-generator-php-image 
+          docker run -d --name ds-data-php -it ds-data-php-image 
           docker container ls -a
       - name: Composer dependencies install
-        run: docker exec symfony-component-generator-php composer install
+        run: docker exec ds-data-php composer install
       - name: Executing tests
-        run: docker exec symfony-component-generator-php sh docker/php/execute-tests.sh
+        run: docker exec ds-data-php sh docker/php/execute-tests.sh

@@ -2,9 +2,9 @@
 
 declare(strict_types=1);
 
-namespace DS\Generator\Generators;
+namespace DS\Data\Generators;
 
-use DS\Generator\Converters\IConverter;
+use DS\Data\Converters\IConverter;
 use Generator;
 
 interface IGenerator

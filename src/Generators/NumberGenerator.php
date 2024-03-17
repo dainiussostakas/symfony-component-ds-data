@@ -2,9 +2,9 @@
 
 declare(strict_types=1);
 
-namespace DS\Generator\Generators;
+namespace DS\Data\Generators;
 
-use DS\Generator\Ranges\NumberOffsetRange;
+use DS\Data\Ranges\NumberOffsetRange;
 use Generator;
 
 class NumberGenerator extends BaseGenerator

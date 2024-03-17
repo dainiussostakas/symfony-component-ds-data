@@ -1,6 +1,6 @@
 <?php
 
-namespace DS\Generator\Converters;
+namespace DS\Data\Converters;
 
 class ByteToCharConverter extends BaseConverter
 {

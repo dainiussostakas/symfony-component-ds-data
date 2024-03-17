@@ -2,9 +2,9 @@
 
 declare(strict_types=1);
 
-namespace DS\Generator\Generators;
+namespace DS\Data\Generators;
 
-use DS\Generator\Traits\CountTrait;
+use DS\Data\Traits\CountTrait;
 use Generator;
 
 /** *

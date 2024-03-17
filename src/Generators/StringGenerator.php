@@ -2,12 +2,12 @@
 
 declare(strict_types=1);
 
-namespace DS\Generator\Generators;
+namespace DS\Data\Generators;
 
-use DS\Generator\Converters\ByteToCharConverter;
-use DS\Generator\Ranges\IRange;
-use DS\Generator\Ranges\NumberOffsetRange;
-use DS\Generator\Traits\LengthTrait;
+use DS\Data\Converters\ByteToCharConverter;
+use DS\Data\Ranges\IRange;
+use DS\Data\Ranges\NumberOffsetRange;
+use DS\Data\Traits\LengthTrait;
 use Generator;
 
 class StringGenerator extends BaseGenerator

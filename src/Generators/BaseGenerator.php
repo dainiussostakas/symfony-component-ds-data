@@ -1,9 +1,9 @@
 <?php
 
-namespace DS\Generator\Generators;
+namespace DS\Data\Generators;
 
-use DS\Generator\Traits\ConvertersTrait;
-use DS\Generator\Traits\RangesTrait;
+use DS\Data\Traits\ConvertersTrait;
+use DS\Data\Traits\RangesTrait;
 
 abstract class BaseGenerator implements IGenerator
 {

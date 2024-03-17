@@ -1,8 +1,8 @@
 <?php
 
-namespace DS\Generator\Traits;
+namespace DS\Data\Traits;
 
-use DS\Generator\Converters\IConverter;
+use DS\Data\Converters\IConverter;
 
 trait ConvertersTrait
 {

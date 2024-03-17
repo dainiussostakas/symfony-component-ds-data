@@ -1,6 +1,6 @@
 <?php
 
-namespace DS\Generator\Converters;
+namespace DS\Data\Converters;
 
 class StringRot13Converter extends BaseConverter
 {

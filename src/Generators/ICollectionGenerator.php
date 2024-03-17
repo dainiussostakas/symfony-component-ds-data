@@ -1,6 +1,6 @@
 <?php
 
-namespace DS\Generator\Generators;
+namespace DS\Data\Generators;
 
 interface ICollectionGenerator
 {

@@ -1,6 +1,6 @@
 <?php
 
-namespace DS\Generator\Ranges;
+namespace DS\Data\Ranges;
 
 class ArrayRange extends BaseRange
 {

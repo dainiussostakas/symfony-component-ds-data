@@ -1,7 +1,7 @@
 {
-  "name": "ds/generator",
+  "name": "ds/data",
   "type": "library",
-  "description": "Generator",
+  "description": "Data generators",
   "version": "0.0.2",
   "require": {
     "php": ">=8.2"
@@ -11,7 +11,8 @@
       "src"
     ],
     "psr-4": {
-      "DS\\Generator\\": ["src", "tests"]
+      "DS\\Data\\": ["src"],
+      "DS\\Data\\Tests\\": ["tests"]
     },
     "exclude-from-classmap": ["tests"]
   },

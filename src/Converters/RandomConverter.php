@@ -1,10 +1,10 @@
 <?php
 
-namespace DS\Generator\Converters;
+namespace DS\Data\Converters;
 
-use DS\Generator\Generators\AnyGenerator;
-use DS\Generator\Ranges\ArrayRange;
-use DS\Generator\Traits\ConvertersTrait;
+use DS\Data\Generators\AnyGenerator;
+use DS\Data\Ranges\ArrayRange;
+use DS\Data\Traits\ConvertersTrait;
 
 class RandomConverter extends BaseConverter
 {
