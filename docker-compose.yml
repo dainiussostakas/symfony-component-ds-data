@@ -3,7 +3,7 @@ version: '3.8'
 services:
 
   php:
-    container_name: symfony-component-generator-php
+    container_name: ds-data-php
     build:
       context: .
       target: development

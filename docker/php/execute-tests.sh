@@ -1,5 +1,13 @@
 #!/bin/bash
 
-#./vendor/bin/phpstan analyse src
-#./vendor/bin/phpcs --standard=PSR12 src
-./vendor/bin/phpunit
+if ! ./vendor/bin/phpstan analyse src --level 3; then
+    exit 1
+fi
+
+if ! ./vendor/bin/phpcs --standard=PSR12 src; then
+    exit 1
+fi
+
+if ! ./vendor/bin/phpunit; then
+    exit 1
+fi

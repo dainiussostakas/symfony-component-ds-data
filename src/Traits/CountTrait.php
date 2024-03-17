@@ -1,6 +1,6 @@
 <?php
 
-namespace DS\Generator\Traits;
+namespace DS\Data\Traits;
 
 trait CountTrait
 {

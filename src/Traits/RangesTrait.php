@@ -1,11 +1,16 @@
 <?php
 
-namespace DS\Generator\Traits;
+namespace DS\Data\Traits;
+
+use DS\Data\Ranges\IRange;
 
 trait RangesTrait
 {
     protected ?array $rangeIndexMapByPosition = null;
 
+    /**
+     * @var IRange[]
+     */
     protected array $ranges = [];
 
     public function getRanges(): array
@@ -21,7 +26,7 @@ trait RangesTrait
             $countIterations = count($this->ranges) - 1;
 
             for ($setIndex = 0; $setIndex < $countIterations; $setIndex++) {
-                $lengthOfRange += $this->ranges[$setIndex][1] ?? 1;
+                $lengthOfRange += $this->ranges[$setIndex]->getLength();
                 $this->rangeIndexMapByPosition[] = $lengthOfRange;
             }
         }
@@ -34,13 +39,13 @@ trait RangesTrait
         $length = 0;
         $totalSets = count($this->ranges);
         for ($setIndex = 0; $setIndex < $totalSets; $setIndex++) {
-            $length += $this->ranges[$setIndex][1] ?? 1;
+            $length += $this->ranges[$setIndex]->getLength();
         }
 
         return $length;
     }
 
-    public function getValueByRangeIndex(int $index): ?int
+    public function getValueByRangeIndex(int $index): mixed
     {
         $rangeIndexMapByPosition = $this->getRangeIndexMapByPosition();
         if ($rangeIndexMapByPosition === null) {
@@ -54,7 +59,7 @@ trait RangesTrait
                 continue;
             }
 
-            return $this->ranges[$rangeIndex][0] + $modulo;
+            return $this->ranges[$rangeIndex]->getByIndex($modulo);
         }
 
         return null;
