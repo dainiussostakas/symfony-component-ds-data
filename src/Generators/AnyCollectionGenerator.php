@@ -7,7 +7,7 @@ namespace DS\Data\Generators;
 use DS\Data\Traits\CountTrait;
 use Generator;
 
-/** *
+/**
  * @template TKey
  * @template TValue
  */
@@ -20,7 +20,7 @@ class AnyCollectionGenerator implements ICollectionGenerator
      * @param int $count
      */
     public function __construct(
-        protected IGenerator $valueGenerator = new AnyGenerator(),
+        protected IGenerator $valueGenerator,
         int $count = 1
     ) {
         $this->count = $count;
@@ -34,7 +34,7 @@ class AnyCollectionGenerator implements ICollectionGenerator
         $generator = $this->valueGenerator;
 
         for ($index = 0; $index < $this->count; $index++) {
-            yield $generator->getValue();
+            yield $generator;
         }
     }
 
