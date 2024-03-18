@@ -25,10 +25,10 @@ class AnyConverter extends BaseConverter
         ]);
 
         /**
-         * @var IConverter $value1
+         * @var IConverter $converter
          */
-        $value1 = $anyGenerator->getValue();
-        $value1->apply($value);
+        $converter = $anyGenerator->getValue();
+        $converter->apply($value);
 
         return $this;
     }

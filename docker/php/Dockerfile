@@ -10,6 +10,11 @@ RUN chmod +x /usr/local/bin/composer
 # Copy the php config file
 COPY ./docker/php/php.ini /usr/local/etc/php/php.ini
 
+RUN apk add oniguruma-dev && \
+    docker-php-ext-install mbstring && \
+    docker-php-ext-enable mbstring && \
+    apk del --purge oniguruma-dev
+
 FROM builder AS development
 
 RUN apk add autoconf g++ make && \
