@@ -18,6 +18,8 @@ RUN apk add autoconf g++ make && \
     docker-php-ext-enable xdebug && \
     apk del --purge autoconf g++ make
 
+RUN docker-php-ext-install mbstring
+
 COPY ./docker/php/docker-php-ext-xdebug.ini /usr/local/etc/php/conf.d/docker-php-ext-xdebug.ini
 
 RUN chmod 0655 /usr/local/etc/php/conf.d/*
