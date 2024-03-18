@@ -8,7 +8,7 @@ use DS\Data\Ranges\IRange;
 use DS\Data\Ranges\NumberOffsetRange;
 use Generator;
 
-/** *
+/**
  * @template TKey
  * @template TValue
  */

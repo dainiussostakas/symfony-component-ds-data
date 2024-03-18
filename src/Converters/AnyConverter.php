@@ -6,7 +6,7 @@ use DS\Data\Generators\AnyGenerator;
 use DS\Data\Ranges\ArrayRange;
 use DS\Data\Traits\ConvertersTrait;
 
-class RandomConverter extends BaseConverter
+class AnyConverter extends BaseConverter
 {
     use ConvertersTrait;
 

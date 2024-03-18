@@ -7,10 +7,16 @@ namespace DS\Data\Generators;
 use DS\Data\Converters\IConverter;
 use Generator;
 
+/**
+ * @template TValue
+ */
 interface IGenerator
 {
     public function getGenerator(): Generator;
 
+    /**
+     * @return TValue
+     */
     public function getValue(): mixed;
 
     /**
