@@ -42,8 +42,7 @@ jobs:
         run: |
           docker load --input /tmp/ds-data-php-image.tar
           docker image ls -a
-          docker run -d --name ds-data-php -it ds-data-php-image 
-          docker container ls -a
+          docker run -d --name ds-data-php -it ds-data-php-image
       - name: Composer dependencies install
         run: docker exec ds-data-php composer install
       - name: Executing tests
