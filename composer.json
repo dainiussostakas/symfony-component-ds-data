@@ -2,7 +2,7 @@
   "name": "ds/data",
   "type": "library",
   "description": "Data generators and converters",
-  "version": "0.0.5",
+  "version": "0.0.6",
   "require": {
     "php": ">=8.2"
   },
